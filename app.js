@@ -1,12 +1,12 @@
 const express =require('express');
 const cors =require('cors');
 require('./config/db')
-// const userRouter =require('./routers/user.route');
+ const userRouter =require('./routers/book.route');
 const app =express();
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use(cors());
-// app.use('/api/users', userRouter )
+app.use('/books', userRouter )
 app.get('/',(req,res)=>{
     res.send("hello world")
 });
